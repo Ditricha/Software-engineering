@@ -11,8 +11,7 @@ double f2(double);
 
 // методы
 double RectangleMethod(double a, double b, double x, double n, double(*f)(double));
-//double TrapezoidalRule(double a, double b, double x, double h, double(*f)(double));
-double TrapezoidalRule(double a, double b, double h, double(*f)(double));
+double TrapezoidalRule(double a, double b, double x, double h, double(*f)(double));
 double DichotomyMethod(double a, double b, double(*f)(double));
 
 // проверка количество точек разбиения отрезка интегрирования (n) 
@@ -70,7 +69,7 @@ int main()
 			cout << "Введите шаг: ";
 			cin >> h;
 			cout << "-----------------------------------------------------------------------------" << endl << endl;
-			cout << "Результат интегрирования: " << TrapezoidalRule(x1, x2, h, f1) << endl;
+			cout << "Результат интегрирования: " << TrapezoidalRule(x1, x2, x, h, f1) << endl;
 			break;
 		case 3:
 			cout << "-----------------------------------------------------------------------------" << endl << endl;
@@ -105,7 +104,7 @@ int main()
 			cout << "Введите шаг: ";
 			cin >> h;
 			cout << "-----------------------------------------------------------------------------" << endl << endl;
-			cout << "Результат интегрирования: " << TrapezoidalRule(x1, x2, h, f2) << endl;
+			cout << "Результат интегрирования: " << TrapezoidalRule(x1, x2, x, h, f2) << endl;
 			break;
 		case 3:
 			cout << "-----------------------------------------------------------------------------" << endl << endl;
@@ -122,8 +121,8 @@ int main()
 // метод средних прямоугольников с заданной точностью
 double RectangleMethod(double a, double b, double x, double n, double(*f)(double))
 {
+	double rectangle_integral = 0;
 	double h = (b - a) / n; // находим шаг приращения
-	double rectangle_integral = 0.0;
 
 	for (int i = 0; i < n; i++)
 		rectangle_integral += f(x);
@@ -133,47 +132,16 @@ double RectangleMethod(double a, double b, double x, double n, double(*f)(double
 }
 
 // метод трапеции с заданным шагом
-double TrapezoidalRule(double a, double b, double h, double(*f)(double))
+double TrapezoidalRule(double a, double b, double x, double h, double(*f)(double))
 {
-	double trapezoidal_integral = 0.0;
+	double trapezoidal_integral = 0;
 	double n = (b - a) / h; // находим точность
 
 	for (int i = 0; i < n; i++) {
-		double x1 = a + i * h;
-		double x2 = a + (i + 1) * h;
-		trapezoidal_integral += 0.5 * (x2 - x1) * (f(x1) + f(x2));
+		trapezoidal_integral += h * f(x);
 	}
 	return trapezoidal_integral;
 }
-
-//другой вариант криво работающего метода
-//double TrapezoidalRule(double a, double b, double x, double h, double(*f)(double))
-//{
-//	double n = (b - a) / h;
-//	double trapezoidal_integral = f(a) + f(b);
-//
-//	for (int i = 1; i < n-1; i++) {
-//		x = x + h;
-//		trapezoidal_integral += 2 * f(x);
-//	}
-//	trapezoidal_integral *= (h / 2.0);
-//
-//	return trapezoidal_integral;
-//}
-
-//ещё один
-//double TrapezoidalRule(double a, double b, double h, double(*f)(double))
-//{
-//	double n = (b - a) / h;
-//	double trapezoidal_integral = f(a) + f(b);
-//
-//	for (int i = 0; i < n-2; i++) {
-//		trapezoidal_integral += 2 * f(a + (i * h));
-//	}
-//	trapezoidal_integral = trapezoidal_integral * (h / 2);
-//
-//	return trapezoidal_integral;
-//}
 
 // метод дихотомий
 double DichotomyMethod(double a, double b, double(*f)(double))
