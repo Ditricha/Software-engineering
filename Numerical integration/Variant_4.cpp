@@ -12,7 +12,7 @@ double f2(double);
 // методы
 double RectangleMethod(double a, double b, double x, double n, double(*f)(double));
 double TrapezoidalRule(double a, double b, double x, double h, double(*f)(double));
-double DichotomyMethod(double a, double b, double(*f)(double));
+double DichotomyMethod(double a, double b, double eps, double(*f)(double));
 
 // проверка количество точек разбиения отрезка интегрирования (n) 
 int test(int n);
@@ -22,7 +22,7 @@ int main()
 {
 	setlocale(LC_ALL, "Russian");
 
-	double x1, x2, n, h;
+	double x1, x2, n, h, eps;
 	int f_num, num;
 
 	cout << "Задание:" << endl << "Написать программу для приближённого вычисления определённого интеграла" << endl
@@ -72,6 +72,8 @@ int main()
 			cout << "Результат интегрирования: " << TrapezoidalRule(x1, x2, x, h, f1) << endl;
 			break;
 		case 3:
+			cout << "Введите точность решения: ";
+			cin >> eps;
 			cout << "-----------------------------------------------------------------------------" << endl << endl;
 			cout << "Результат: " << DichotomyMethod(x1, x2, f1) << endl;
 			break;
@@ -107,6 +109,8 @@ int main()
 			cout << "Результат интегрирования: " << TrapezoidalRule(x1, x2, x, h, f2) << endl;
 			break;
 		case 3:
+			cout << "Введите точность решения: ";
+			cin >> eps;
 			cout << "-----------------------------------------------------------------------------" << endl << endl;
 			cout << "Результат: " << DichotomyMethod(x1, x2, f2) << endl;
 			break;
@@ -144,9 +148,8 @@ double TrapezoidalRule(double a, double b, double x, double h, double(*f)(double
 }
 
 // метод дихотомий
-double DichotomyMethod(double a, double b, double(*f)(double))
+double DichotomyMethod(double a, double b, double eps, double(*f)(double))
 {
-	double eps = 0.1;
 	double point = (a + b) / 2;
 
 	while (((b - a) > eps) && (f(point) != 0)) {
@@ -156,6 +159,7 @@ double DichotomyMethod(double a, double b, double(*f)(double))
 		else
 			a = point;
 	}
+	point = (a + b) / 2;
 	return point;
 }
 
