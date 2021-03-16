@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include <math.h>
 #include <iostream>
 # include <locale.h>
@@ -10,12 +9,9 @@ double f1(double);
 double f2(double);
 
 // методы
-double RectangleMethod(double a, double b, double x, double n, double(*f)(double));
-double TrapezoidalRule(double a, double b, double x, double h, double(*f)(double));
+double RectangleMethod(double a, double b, double eps, double(*f)(double));
+double TrapezoidalRule(double a, double b, double h, double(*f)(double));
 double DichotomyMethod(double a, double b, double eps, double(*f)(double));
-
-// проверка количество точек разбиения отрезка интегрирования (n) 
-int test(int n);
 
 
 int main()
@@ -46,36 +42,24 @@ int main()
 	cin >> x2;
 
 	if (f_num == 1) {
-		double x;
-		cout << "Введите коэффициенты подынтегральной функции cos(x): ";
-		cin >> x;
-
 		switch (num) {
 		case 1:
-			while (true) {
-				int cs;
-				cout << "Введите количество точек разбиения отрезка интегрирования: ";
-				cin >> n;
-				cs = test(n);
-				if (cs == 0)
-					cout << "Значение n меньше единицы. Введите заново." << endl;
-				else
-					break;
-			}
+			cout << "Введите точность решения: ";
+			cin >> eps;
 			cout << "-----------------------------------------------------------------------------" << endl << endl;
-			cout << "Результат интегрирования: " << RectangleMethod(x1, x2, x, n, f1) << endl;
+			cout << "Результат интегрирования: " << RectangleMethod(x1, x2, eps, f1) << endl;
 			break;
 		case 2:
 			cout << "Введите шаг: ";
 			cin >> h;
 			cout << "-----------------------------------------------------------------------------" << endl << endl;
-			cout << "Результат интегрирования: " << TrapezoidalRule(x1, x2, x, h, f1) << endl;
+			cout << "Результат интегрирования: " << TrapezoidalRule(x1, x2, h, f1) << endl;
 			break;
 		case 3:
 			cout << "Введите точность решения: ";
 			cin >> eps;
 			cout << "-----------------------------------------------------------------------------" << endl << endl;
-			cout << "Результат: " << DichotomyMethod(x1, x2, f1) << endl;
+			cout << "Результат: " << DichotomyMethod(x1, x2, eps, f1) << endl;
 			break;
 		default:
 			cout << "-----------------------------------------------------------------------------" << endl << endl;
@@ -83,36 +67,24 @@ int main()
 		}
 	}
 	else if (f_num == 2) {
-		double x;
-		cout << "Введите коэффициенты подынтегральной функции 1/2 * (x^2 - 5) * sin(3*x): ";
-		cin >> x;
-
 		switch (num) {
 		case 1:
-			while (true) {
-				int cs;
-				cout << "Введите количество точек разбиения отрезка интегрирования: ";
-				cin >> n;
-				cs = test(n);
-				if (cs == 0)
-					cout << "Значение n меньше единицы. Введите заново." << endl;
-				else
-					break;
-		}
+			cout << "Введите точность решения: ";
+			cin >> eps;
 			cout << "-----------------------------------------------------------------------------" << endl << endl;
-			cout << "Результат интегрирования: " << RectangleMethod(x1, x2, x, n, f2) << endl;
+			cout << "Результат интегрирования: " << RectangleMethod(x1, x2, eps, f2) << endl;
 			break;
 		case 2:
 			cout << "Введите шаг: ";
 			cin >> h;
 			cout << "-----------------------------------------------------------------------------" << endl << endl;
-			cout << "Результат интегрирования: " << TrapezoidalRule(x1, x2, x, h, f2) << endl;
+			cout << "Результат интегрирования: " << TrapezoidalRule(x1, x2, h, f2) << endl;
 			break;
 		case 3:
 			cout << "Введите точность решения: ";
 			cin >> eps;
 			cout << "-----------------------------------------------------------------------------" << endl << endl;
-			cout << "Результат: " << DichotomyMethod(x1, x2, f2) << endl;
+			cout << "Результат: " << DichotomyMethod(x1, x2, eps, f2) << endl;
 			break;
 		default:
 			cout << "-----------------------------------------------------------------------------" << endl << endl;
@@ -122,32 +94,79 @@ int main()
 	getchar();
 }
 
-// метод средних прямоугольников с заданной точностью
-double RectangleMethod(double a, double b, double x, double n, double(*f)(double))
+//---------------------------------------------------------------------------
+// RectangleMethode приближённо вычисляет определённый интеграл методом 
+// средних прямоугольников с заданной точностью
+// Вход: a, b - границы интервала
+//		 eps - точночть
+//		 *f - выбранная пользователм функция
+// Выход: s_1 - решение уравнения
+//---------------------------------------------------------------------------
+double RectangleMethod(double a, double b, double eps, double(*f)(double))
 {
-	double rectangle_integral = 0;
-	double h = (b - a) / n; // находим шаг приращения
+	double n = 2;
+	double s_1, s_2;
+	double h = (b - a) / n;
 
-	for (int i = 0; i < n; i++)
-		rectangle_integral += f(x);
-	rectangle_integral *= h;
+	double x = a + h / 2;
+	s_1 = f(a);
 
-	return rectangle_integral;
+	for (int i = 1; i <= n-1; i++) {
+		x = x + h;
+		s_1 = s_1 + f(x);
+	}
+	s_1 = s_1 * h;
+
+	s_2 = 0;
+
+	while (fabs(s_1 - s_2) > eps) {
+		s_2 = s_1;
+		n = 2 * n;
+		h = (b - a) / n;
+		x = a + h / 2;
+		s_1 = f(a);
+		for (int i = 1; i <= n-1; i++) {
+			x = x + h;
+			s_1 = s_1 + f(x);
+		}
+		s_1 = s_1 * h;
+	}
+	
+	return s_1;
 }
 
-// метод трапеции с заданным шагом
-double TrapezoidalRule(double a, double b, double x, double h, double(*f)(double))
+//---------------------------------------------------------------------------
+// TrapezoidalRule приближённо вычисляет определённый интеграл методом трапеции
+// с заданным шагом
+// Вход: a, b - границы интервала
+//		 h - шаг приращения
+//		 *f - выбранная пользователм функция
+// Выход: trapezoidal_integral - решение уравнения
+//---------------------------------------------------------------------------
+double TrapezoidalRule(double a, double b, double h, double(*f)(double))
 {
-	double trapezoidal_integral = 0;
-	double n = (b - a) / h; // находим точность
+	double trapezoidal_integral;
+	double n = (b - a) / h; 
 
-	for (int i = 0; i < n; i++) {
-		trapezoidal_integral += h * f(x);
+	trapezoidal_integral = (h * (f(a) + f(b)) / 2);
+	double x = a + h;
+
+	for (int i = 0; i < n-1; i++) {
+		trapezoidal_integral = trapezoidal_integral + f(x) * h;
+		x = x + h;
 	}
+
 	return trapezoidal_integral;
 }
 
-// метод дихотомий
+//---------------------------------------------------------------------------
+// DichotomyMethod находит точку пересечения функции с осью абсцисс на [a, b] 
+// методом дихотомий
+// Вход: a, b - границы интервала
+//		 eps - точночть решения
+//		 *f - выбранная пользователм функция
+// Выход: point - решение уравнения
+//---------------------------------------------------------------------------
 double DichotomyMethod(double a, double b, double eps, double(*f)(double))
 {
 	double point = (a + b) / 2;
@@ -163,7 +182,11 @@ double DichotomyMethod(double a, double b, double eps, double(*f)(double))
 	return point;
 }
 
-// подынтегральные функции
+//---------------------------------------------------------------------------
+// f1, f2 вычисляют интеграл функций cos(x) и 1/2 * ((x^2) - 5) * sin(3*x)
+// Вход: х
+// Выход: y = f(x)
+//---------------------------------------------------------------------------
 double f1(double x)
 {
 	return (cos(x));
@@ -172,14 +195,4 @@ double f1(double x)
 double f2(double x)
 {
 	return (0.5 * (pow(x, 2) - 5) * sin(3 * x));
-}
-
-
-// проверка количество точек разбиения отрезка интегрирования (n) 
-int test(int n)
-{
-	if (n < 1)
-		return 0;
-	else
-		return 1;
 }
