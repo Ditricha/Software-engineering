@@ -13,7 +13,7 @@ namespace Project2 {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Сводка для MyForm
+	/// РЎРІРѕРґРєР° РґР»СЏ MyForm
 	/// </summary>
 	public ref class MyForm : public System::Windows::Forms::Form
 	{
@@ -21,14 +21,11 @@ namespace Project2 {
 		MyForm(void)
 		{
 			InitializeComponent();
-			//
-			//TODO: добавьте код конструктора
-			//
 		}
 
 	protected:
 		/// <summary>
-		/// Освободить все используемые ресурсы.
+		/// РћСЃРІРѕР±РѕРґРёС‚СЊ РІСЃРµ РёСЃРїРѕР»СЊР·СѓРµРјС‹Рµ СЂРµСЃСѓСЂСЃС‹.
 		/// </summary>
 		~MyForm()
 		{
@@ -50,8 +47,8 @@ namespace Project2 {
 	private: System::Windows::Forms::TextBox^ x2;
 
 	private: System::Windows::Forms::MenuStrip^ menuStrip1;
-	private: System::Windows::Forms::ToolStripMenuItem^ справкаToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ оЗаданииToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^ СЃРїСЂР°РІРєР°ToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^ РѕР—Р°РґР°РЅРёРёToolStripMenuItem;
 	private: System::Windows::Forms::Label^ label7;
 	private: System::Windows::Forms::TextBox^ result;
 	private: System::Windows::Forms::Button^ button2;
@@ -68,14 +65,14 @@ namespace Project2 {
 
 	private:
 		/// <summary>
-		/// Обязательная переменная конструктора.
+		/// РћР±СЏР·Р°С‚РµР»СЊРЅР°СЏ РїРµСЂРµРјРµРЅРЅР°СЏ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР°.
 		/// </summary>
 		System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
-		/// Требуемый метод для поддержки конструктора — не изменяйте 
-		/// содержимое этого метода с помощью редактора кода.
+		/// РўСЂРµР±СѓРµРјС‹Р№ РјРµС‚РѕРґ РґР»СЏ РїРѕРґРґРµСЂР¶РєРё РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР° вЂ” РЅРµ РёР·РјРµРЅСЏР№С‚Рµ 
+		/// СЃРѕРґРµСЂР¶РёРјРѕРµ СЌС‚РѕРіРѕ РјРµС‚РѕРґР° СЃ РїРѕРјРѕС‰СЊСЋ СЂРµРґР°РєС‚РѕСЂР° РєРѕРґР°.
 		/// </summary>
 		void InitializeComponent(void)
 		{
@@ -101,8 +98,8 @@ namespace Project2 {
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->func_type = (gcnew System::Windows::Forms::ComboBox());
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
-			this->справкаToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->оЗаданииToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->СЃРїСЂР°РІРєР°ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->РѕР—Р°РґР°РЅРёРёToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart1))->BeginInit();
 			this->groupBox1->SuspendLayout();
 			this->menuStrip1->SuspendLayout();
@@ -153,7 +150,7 @@ namespace Project2 {
 			this->groupBox1->Size = System::Drawing::Size(413, 518);
 			this->groupBox1->TabIndex = 1;
 			this->groupBox1->TabStop = false;
-			this->groupBox1->Text = L"Входные данные";
+			this->groupBox1->Text = L"Р’С…РѕРґРЅС‹Рµ РґР°РЅРЅС‹Рµ";
 			// 
 			// label7
 			// 
@@ -162,7 +159,7 @@ namespace Project2 {
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(221, 20);
 			this->label7->TabIndex = 15;
-			this->label7->Text = L"Результат интегрирования:";
+			this->label7->Text = L"Р РµР·СѓР»СЊС‚Р°С‚ РёРЅС‚РµРіСЂРёСЂРѕРІР°РЅРёСЏ:";
 			// 
 			// result
 			// 
@@ -177,7 +174,7 @@ namespace Project2 {
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(201, 34);
 			this->button2->TabIndex = 13;
-			this->button2->Text = L"Вычислить";
+			this->button2->Text = L"Р’С‹С‡РёСЃР»РёС‚СЊ";
 			this->button2->UseVisualStyleBackColor = true;
 			this->button2->Click += gcnew System::EventHandler(this, &MyForm::button2_Click);
 			// 
@@ -195,7 +192,7 @@ namespace Project2 {
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(113, 20);
 			this->label6->TabIndex = 11;
-			this->label6->Text = L"Введите шаг:";
+			this->label6->Text = L"Р’РІРµРґРёС‚Рµ С€Р°Рі:";
 			// 
 			// precision
 			// 
@@ -211,7 +208,7 @@ namespace Project2 {
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(155, 20);
 			this->label5->TabIndex = 9;
-			this->label5->Text = L"Введите точность:";
+			this->label5->Text = L"Р’РІРµРґРёС‚Рµ С‚РѕС‡РЅРѕСЃС‚СЊ:";
 			// 
 			// label4
 			// 
@@ -220,20 +217,20 @@ namespace Project2 {
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(337, 20);
 			this->label4->TabIndex = 8;
-			this->label4->Text = L"Выберите методля вычисления интеграла";
+			this->label4->Text = L"Р’С‹Р±РµСЂРёС‚Рµ РјРµС‚РѕРґР»СЏ РІС‹С‡РёСЃР»РµРЅРёСЏ РёРЅС‚РµРіСЂР°Р»Р°";
 			// 
 			// method
 			// 
 			this->method->FormattingEnabled = true;
 			this->method->Items->AddRange(gcnew cli::array< System::Object^  >(3) {
-				L"метод средних прямоугольников с точностью", L"метод трапеции с шагом",
-					L"метод дихотомии с точностью"
+				L"РјРµС‚РѕРґ СЃСЂРµРґРЅРёС… РїСЂСЏРјРѕСѓРіРѕР»СЊРЅРёРєРѕРІ СЃ С‚РѕС‡РЅРѕСЃС‚СЊСЋ", L"РјРµС‚РѕРґ С‚СЂР°РїРµС†РёРё СЃ С€Р°РіРѕРј",
+					L"РјРµС‚РѕРґ РґРёС…РѕС‚РѕРјРёРё СЃ С‚РѕС‡РЅРѕСЃС‚СЊСЋ"
 			});
 			this->method->Location = System::Drawing::Point(6, 247);
 			this->method->Name = L"method";
 			this->method->Size = System::Drawing::Size(398, 28);
 			this->method->TabIndex = 7;
-			this->method->Text = L"(пока не выбрано)";
+			this->method->Text = L"(РїРѕРєР° РЅРµ РІС‹Р±СЂР°РЅРѕ)";
 			this->method->SelectedIndexChanged += gcnew System::EventHandler(this, &MyForm::method_SelectedIndexChanged);
 			// 
 			// label3
@@ -243,7 +240,7 @@ namespace Project2 {
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(134, 20);
 			this->label3->TabIndex = 6;
-			this->label3->Text = L"Конечная точка:";
+			this->label3->Text = L"РљРѕРЅРµС‡РЅР°СЏ С‚РѕС‡РєР°:";
 			// 
 			// x2
 			// 
@@ -259,7 +256,7 @@ namespace Project2 {
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(146, 20);
 			this->label2->TabIndex = 4;
-			this->label2->Text = L"Начальная точка:";
+			this->label2->Text = L"РќР°С‡Р°Р»СЊРЅР°СЏ С‚РѕС‡РєР°:";
 			this->label2->Click += gcnew System::EventHandler(this, &MyForm::label2_Click);
 			// 
 			// x1
@@ -276,7 +273,7 @@ namespace Project2 {
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(201, 32);
 			this->button1->TabIndex = 2;
-			this->button1->Text = L"Нарисовать";
+			this->button1->Text = L"РќР°СЂРёСЃРѕРІР°С‚СЊ";
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
 			// 
@@ -287,7 +284,7 @@ namespace Project2 {
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(267, 20);
 			this->label1->TabIndex = 1;
-			this->label1->Text = L"Выберите функцию для проверки";
+			this->label1->Text = L"Р’С‹Р±РµСЂРёС‚Рµ С„СѓРЅРєС†РёСЋ РґР»СЏ РїСЂРѕРІРµСЂРєРё";
 			this->label1->Click += gcnew System::EventHandler(this, &MyForm::label1_Click);
 			// 
 			// func_type
@@ -298,32 +295,32 @@ namespace Project2 {
 			this->func_type->Name = L"func_type";
 			this->func_type->Size = System::Drawing::Size(398, 28);
 			this->func_type->TabIndex = 0;
-			this->func_type->Text = L"(пока не выбрано)";
+			this->func_type->Text = L"(РїРѕРєР° РЅРµ РІС‹Р±СЂР°РЅРѕ)";
 			// 
 			// menuStrip1
 			// 
 			this->menuStrip1->GripMargin = System::Windows::Forms::Padding(2, 2, 0, 2);
 			this->menuStrip1->ImageScalingSize = System::Drawing::Size(24, 24);
-			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->справкаToolStripMenuItem });
+			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->СЃРїСЂР°РІРєР°ToolStripMenuItem });
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
 			this->menuStrip1->Size = System::Drawing::Size(1076, 36);
 			this->menuStrip1->TabIndex = 2;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
-			// справкаToolStripMenuItem
+			// СЃРїСЂР°РІРєР°ToolStripMenuItem
 			// 
-			this->справкаToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->оЗаданииToolStripMenuItem });
-			this->справкаToolStripMenuItem->Name = L"справкаToolStripMenuItem";
-			this->справкаToolStripMenuItem->Size = System::Drawing::Size(97, 32);
-			this->справкаToolStripMenuItem->Text = L"Справка";
+			this->СЃРїСЂР°РІРєР°ToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->РѕР—Р°РґР°РЅРёРёToolStripMenuItem });
+			this->СЃРїСЂР°РІРєР°ToolStripMenuItem->Name = L"СЃРїСЂР°РІРєР°ToolStripMenuItem";
+			this->СЃРїСЂР°РІРєР°ToolStripMenuItem->Size = System::Drawing::Size(97, 32);
+			this->СЃРїСЂР°РІРєР°ToolStripMenuItem->Text = L"РЎРїСЂР°РІРєР°";
 			// 
-			// оЗаданииToolStripMenuItem
+			// РѕР—Р°РґР°РЅРёРёToolStripMenuItem
 			// 
-			this->оЗаданииToolStripMenuItem->Name = L"оЗаданииToolStripMenuItem";
-			this->оЗаданииToolStripMenuItem->Size = System::Drawing::Size(199, 34);
-			this->оЗаданииToolStripMenuItem->Text = L"О задании";
-			this->оЗаданииToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::оЗаданииToolStripMenuItem_Click);
+			this->РѕР—Р°РґР°РЅРёРёToolStripMenuItem->Name = L"РѕР—Р°РґР°РЅРёРёToolStripMenuItem";
+			this->РѕР—Р°РґР°РЅРёРёToolStripMenuItem->Size = System::Drawing::Size(199, 34);
+			this->РѕР—Р°РґР°РЅРёРёToolStripMenuItem->Text = L"Рћ Р·Р°РґР°РЅРёРё";
+			this->РѕР—Р°РґР°РЅРёРёToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::РѕР—Р°РґР°РЅРёРёToolStripMenuItem_Click);
 			// 
 			// MyForm
 			// 
@@ -336,9 +333,9 @@ namespace Project2 {
 			this->Controls->Add(this->menuStrip1);
 			this->MainMenuStrip = this->menuStrip1;
 			this->Name = L"MyForm";
-			this->Text = L"Графики";
+			this->Text = L"Р“СЂР°С„РёРєРё";
 			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
-			this->Click += gcnew System::EventHandler(this, &MyForm::оЗаданииToolStripMenuItem_Click);
+			this->Click += gcnew System::EventHandler(this, &MyForm::РѕР—Р°РґР°РЅРёРёToolStripMenuItem_Click);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart1))->EndInit();
 			this->groupBox1->ResumeLayout(false);
 			this->groupBox1->PerformLayout();
@@ -365,7 +362,7 @@ namespace Project2 {
 				break;
 			}
 		}
-		else MessageBox::Show("Возможно, не все поля заполнены.\nПроверьте данные и повторите попыткую.");
+		else MessageBox::Show("Р’РѕР·РјРѕР¶РЅРѕ, РЅРµ РІСЃРµ РїРѕР»СЏ Р·Р°РїРѕР»РЅРµРЅС‹.\nРџСЂРѕРІРµСЂСЊС‚Рµ РґР°РЅРЅС‹Рµ Рё РїРѕРІС‚РѕСЂРёС‚Рµ РїРѕРїС‹С‚РєСѓСЋ.");
 	}
 private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
 }
@@ -373,65 +370,18 @@ private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e)
 }
 private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
-private: System::Void оЗаданииToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void РѕР—Р°РґР°РЅРёРёToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	about^ ab = gcnew about();
 	ab->ShowDialog();
 }
 
-	   //private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e)
-
-	   //{
-
-		  // double q;
-
-		  // System::String^ Str;
-
-		  // //CultureInfo^ MyCI = gcnew CultureInfo( "ru-RU",false ); // Creates and initializes a CultureInfo.
-
-		  // CultureInfo^ myCIclone;
-
-		  // myCIclone = dynamic_cast <CultureInfo^> (Thread::CurrentThread->CurrentCulture->Clone()); // Clones myCIclone and modifies the NumberDecimalSeparator instances associated with the clone.
-
-		  // label5->Text = myCIclone->NumberFormat->NumberDecimalSeparator; // Current NumberDecimalSeparator
-
-		  // myCIclone->NumberFormat->NumberDecimalSeparator = textBox2->Text; // New NumberDecimalSeparator from textBox2
-
-		  // Thread::CurrentThread->CurrentCulture = myCIclone; // Set New NumberDecimalSeparator to CurrentThread
-
-		  // label2->Text = myCIclone->NumberFormat->NumberDecimalSeparator; // Show New NumberDecimalSeparator in label2
-
-		  // Str = textBox1->Text; // Взять строку (число) из textBox1
-
-		  // q = 10 * Convert::ToDouble(textBox1->Text); // Преобразовать строку в число и произвести вычисления
-
-		  // Str = Convert::ToString(q); // Полученный результат преобразовать обратно в строку
-
-		  // label1->Text = Str; // Показать результат в label1
-
-	   //}
-
-
 private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 }
-	//double eps, h, a, b, integral;
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+	double eps, h, a, b, integral;
 	
-	/*System::String^ Str;
-	CultureInfo^ MyCI = gcnew CultureInfo("ru-RU", false);*/
-	
-	double eps, h, a, b;
-
-	//eps = Convert::ToDouble(precision->Text);
-	//h = Convert::ToDouble(step->Text);
 	a = Convert::ToDouble(x1->Text);
 	b = Convert::ToDouble(x2->Text);
-
-	//double eps = double->Parse();
-
-	//eps = precision.Replace(".", ",");
-
-
-	double integral;
 
 	if (func_type->SelectedIndex == 0 && x1->Text != "" && x2->Text != "") {
 		switch (method->SelectedIndex) {
@@ -442,7 +392,7 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 				integral = RectangleMethod(a, b, eps, f1);
 				result->Text = Convert::ToString(Math::Round(integral, 5));
 			}
-			else MessageBox::Show("Возможно, не все поля правильно заполнены.\nДобавьте или удалите данные и повторите попыткую.");
+			else MessageBox::Show("Р’РѕР·РјРѕР¶РЅРѕ, РЅРµ РІСЃРµ РїРѕР»СЏ РїСЂР°РІРёР»СЊРЅРѕ Р·Р°РїРѕР»РЅРµРЅС‹.\nР”РѕР±Р°РІСЊС‚Рµ РёР»Рё СѓРґР°Р»РёС‚Рµ РґР°РЅРЅС‹Рµ Рё РїРѕРІС‚РѕСЂРёС‚Рµ РїРѕРїС‹С‚РєСѓСЋ.");
 			break;
 		case 1:
 			if (step->Text != "" && precision->Text == "") {
@@ -451,7 +401,7 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 				integral = TrapezoidalRule(a, b, h, f1);
 				result->Text = Convert::ToString(Math::Round(integral, 5));
 			}
-			else MessageBox::Show("Возможно, не все поля правильно заполнены.\nДобавьте или удалите данные и повторите попыткую.");
+			else MessageBox::Show("Р’РѕР·РјРѕР¶РЅРѕ, РЅРµ РІСЃРµ РїРѕР»СЏ РїСЂР°РІРёР»СЊРЅРѕ Р·Р°РїРѕР»РЅРµРЅС‹.\nР”РѕР±Р°РІСЊС‚Рµ РёР»Рё СѓРґР°Р»РёС‚Рµ РґР°РЅРЅС‹Рµ Рё РїРѕРІС‚РѕСЂРёС‚Рµ РїРѕРїС‹С‚РєСѓСЋ.");
 			break;
 		case 2:
 			if (precision->Text != "" && step->Text == "") {
@@ -460,9 +410,9 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 				integral = DichotomyMethod(a, b, eps, f1);
 				result->Text = Convert::ToString(Math::Round(integral, 5));
 			}
-			else MessageBox::Show("Возможно, не все поля правильно заполнены.\nДобавьте или удалите данные и повторите попыткую.");
+			else MessageBox::Show("Р’РѕР·РјРѕР¶РЅРѕ, РЅРµ РІСЃРµ РїРѕР»СЏ РїСЂР°РІРёР»СЊРЅРѕ Р·Р°РїРѕР»РЅРµРЅС‹.\nР”РѕР±Р°РІСЊС‚Рµ РёР»Рё СѓРґР°Р»РёС‚Рµ РґР°РЅРЅС‹Рµ Рё РїРѕРІС‚РѕСЂРёС‚Рµ РїРѕРїС‹С‚РєСѓСЋ.");
 		default:
-			MessageBox::Show("Возможно, где-то ошибка.\nПроверьте данные и повторите попыткую.");
+			MessageBox::Show("Р’РѕР·РјРѕР¶РЅРѕ, РіРґРµ-С‚Рѕ РѕС€РёР±РєР°.\nРџСЂРѕРІРµСЂСЊС‚Рµ РґР°РЅРЅС‹Рµ Рё РїРѕРІС‚РѕСЂРёС‚Рµ РїРѕРїС‹С‚РєСѓСЋ.");
 		}
 	}
 	else if (func_type->SelectedIndex == 1 && x1->Text != "" && x2->Text != "") {
@@ -474,7 +424,7 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 				integral = RectangleMethod(a, b, eps, f2);
 				result->Text = Convert::ToString(Math::Round(integral, 5));
 			}
-			else MessageBox::Show("Возможно, не все поля правильно заполнены.\nДобавьте или удалите данные и повторите попыткую.");
+			else MessageBox::Show("Р’РѕР·РјРѕР¶РЅРѕ, РЅРµ РІСЃРµ РїРѕР»СЏ РїСЂР°РІРёР»СЊРЅРѕ Р·Р°РїРѕР»РЅРµРЅС‹.\nР”РѕР±Р°РІСЊС‚Рµ РёР»Рё СѓРґР°Р»РёС‚Рµ РґР°РЅРЅС‹Рµ Рё РїРѕРІС‚РѕСЂРёС‚Рµ РїРѕРїС‹С‚РєСѓСЋ.");
 			break;
 		case 1:
 			if (step->Text != "" && precision->Text == "") {
@@ -483,7 +433,7 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 				integral = TrapezoidalRule(a, b, h, f2);
 				result->Text = Convert::ToString(Math::Round(integral, 5));
 			}
-			else MessageBox::Show("Возможно, не все поля правильно заполнены.\nДобавьте или удалите данные и повторите попыткую.");
+			else MessageBox::Show("Р’РѕР·РјРѕР¶РЅРѕ, РЅРµ РІСЃРµ РїРѕР»СЏ РїСЂР°РІРёР»СЊРЅРѕ Р·Р°РїРѕР»РЅРµРЅС‹.\nР”РѕР±Р°РІСЊС‚Рµ РёР»Рё СѓРґР°Р»РёС‚Рµ РґР°РЅРЅС‹Рµ Рё РїРѕРІС‚РѕСЂРёС‚Рµ РїРѕРїС‹С‚РєСѓСЋ.");
 			break;
 		case 2:
 			if (precision->Text != "" && step->Text == "") {
@@ -492,9 +442,9 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 				integral = DichotomyMethod(a, b, eps, f2);
 				result->Text = Convert::ToString(Math::Round(integral, 5));
 			}
-			else MessageBox::Show("Возможно, не все поля правильно заполнены.\nДобавьте или удалите данные и повторите попыткую.");
+			else MessageBox::Show("Р’РѕР·РјРѕР¶РЅРѕ, РЅРµ РІСЃРµ РїРѕР»СЏ РїСЂР°РІРёР»СЊРЅРѕ Р·Р°РїРѕР»РЅРµРЅС‹.\nР”РѕР±Р°РІСЊС‚Рµ РёР»Рё СѓРґР°Р»РёС‚Рµ РґР°РЅРЅС‹Рµ Рё РїРѕРІС‚РѕСЂРёС‚Рµ РїРѕРїС‹С‚РєСѓСЋ.");
 		default:
-			MessageBox::Show("Возможно, где-то ошибка.\nПроверьте данные и повторите попыткую.");
+			MessageBox::Show("Р’РѕР·РјРѕР¶РЅРѕ, РіРґРµ-С‚Рѕ РѕС€РёР±РєР°.\nРџСЂРѕРІРµСЂСЊС‚Рµ РґР°РЅРЅС‹Рµ Рё РїРѕРІС‚РѕСЂРёС‚Рµ РїРѕРїС‹С‚РєСѓСЋ.");
 		}
 	}
 }
