@@ -411,6 +411,7 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 				result->Text = Convert::ToString(Math::Round(integral, 5));
 			}
 			else MessageBox::Show("Возможно, не все поля правильно заполнены.\nДобавьте или удалите данные и повторите попыткую.");
+			break;
 		default:
 			MessageBox::Show("Возможно, где-то ошибка.\nПроверьте данные и повторите попыткую.");
 		}
@@ -443,6 +444,7 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 				result->Text = Convert::ToString(Math::Round(integral, 5));
 			}
 			else MessageBox::Show("Возможно, не все поля правильно заполнены.\nДобавьте или удалите данные и повторите попыткую.");
+			break;
 		default:
 			MessageBox::Show("Возможно, где-то ошибка.\nПроверьте данные и повторите попыткую.");
 		}
