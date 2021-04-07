@@ -13,35 +13,43 @@
 //---------------------------------------------------------------------------
 double RectangleMethod(double a, double b, double eps, double(*f)(double))
 {
-	double n = 2;
 	double integral1, integral2;
-	double h = (b - a) / n;
-
-	double x = a + h / 2;
-	integral1 = f(a);
-
-	for (int i = 1; i <= n - 1; i++) {
-		x += h;
-		integral1 += f(x);
-	}
-	integral1 *= h;
+	float n = 2;
+	
+	integral1 = RectangleArea(a, b, n, f);
 
 	integral2 = 0;
 
 	while (fabs(integral1 - integral2) > eps) {
 		integral2 = integral1;
 		n = 2 * n;
-		h = (b - a) / n;
-		x = a + h / 2;
-		integral1 = f(a);
-		for (int i = 1; i <= n - 1; i++) {
-			x += h;
-			integral1 += f(x);
-		}
-		integral1 *= h;
+		integral1 = RectangleArea(a, b, n, f);
 	}
 
 	return integral1;
+}
+
+//---------------------------------------------------------------------------
+// RectangleArea находит площадь прямоугольника при заданном количестве
+// интервалов
+// Вход: a, b - границы интервала
+//	 n - количество интервалов
+//	 *f - выбранная пользователм функция
+// Выход: integral - решение уравнения
+//---------------------------------------------------------------------------
+double RectangleArea(double a, double b, float n, double(*f)(double))
+{
+	double h = (b - a) / n;
+	double x = a + h / 2;
+	double integral = f(a);
+
+	for (int i = 1; i <= n - 1; i++) {
+		x += h;
+		integral += f(x);
+	}
+	integral *= h;
+
+	return integral;
 }
 
 //---------------------------------------------------------------------------
