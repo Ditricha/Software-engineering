@@ -13,12 +13,9 @@
 //---------------------------------------------------------------------------
 double RectangleMethod(double a, double b, double eps, double(*f)(double))
 {
-	double integral1, integral2;
 	float n = 2;
-	
-	integral1 = RectangleArea(a, b, n, f);
-
-	integral2 = 0;
+	double integral1 = RectangleArea(a, b, n, f);
+	double integral2 = 0;
 
 	while (fabs(integral1 - integral2) > eps) {
 		integral2 = integral1;
@@ -62,10 +59,8 @@ double RectangleArea(double a, double b, float n, double(*f)(double))
 //---------------------------------------------------------------------------
 double TrapezoidalRule(double a, double b, double h, double(*f)(double))
 {
-	double integral;
 	double n = (b - a) / h;
-
-	integral = (h * (f(a) + f(b)) / 2);
+	double integral = (h * (f(a) + f(b)) / 2);
 	double x = a + h;
 
 	for (int i = 0; i < n - 1; i++) {
